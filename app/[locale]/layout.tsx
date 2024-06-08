@@ -4,7 +4,8 @@ import React from 'react'
 import '@/app/globals.css'
 import { locales } from '@/i18n'
 import { unstable_setRequestLocale } from 'next-intl/server'
-
+import { xiaoWei, maShanZheng } from '@/fonts/cn'
+import { ubuntu, ubuntuCondensed, ubuntuMono } from '@/fonts/en'
 export default async function LocaleLayout({
   children,
   params: { locale },
@@ -15,7 +16,9 @@ export default async function LocaleLayout({
   const messages = await getMessages()
   unstable_setRequestLocale(locale)
   return (
-    <html lang={locale}>
+    <html
+      lang={locale}
+      className={`${xiaoWei.variable} ${maShanZheng.variable} ${ubuntu.variable} ${ubuntuCondensed.variable} ${ubuntuMono.variable}`}>
       <body>
         <NextIntlClientProvider messages={messages}>
           {children}
