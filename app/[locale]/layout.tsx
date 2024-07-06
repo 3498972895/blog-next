@@ -6,7 +6,10 @@ import { locales } from '@/i18n'
 import { unstable_setRequestLocale } from 'next-intl/server'
 import { xiaoWei, maShanZheng } from '@/fonts/cn'
 import { ubuntu, ubuntuCondensed, ubuntuMono } from '@/fonts/en'
-export default async function LocaleLayout({
+import Sessionprovider from '@/components/blog/SessionProvider'
+import { getServerSession } from 'next-auth'
+
+export default async function RootLayout({
   children,
   params: { locale },
 }: {
@@ -14,6 +17,7 @@ export default async function LocaleLayout({
   params: { locale: string }
 }) {
   const messages = await getMessages()
+  const session = await getServerSession()
   unstable_setRequestLocale(locale)
   return (
     <html
@@ -21,7 +25,7 @@ export default async function LocaleLayout({
       className={`${xiaoWei.variable} ${maShanZheng.variable} ${ubuntu.variable} ${ubuntuCondensed.variable} ${ubuntuMono.variable}`}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <Sessionprovider session={session}>{children}</Sessionprovider>
         </NextIntlClientProvider>
       </body>
     </html>

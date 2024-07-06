@@ -14,7 +14,7 @@ export const postsToPhotos = pgTable(
       .references(() => photos.id),
   },
   table => ({
-    pk: primaryKey({ columns: [table.postId, table.photoId] }),
+    pk_posts_photos: primaryKey({ columns: [table.postId, table.photoId] }),
   }),
 )
 
