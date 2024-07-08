@@ -12,13 +12,13 @@ import { visitors } from './visitors'
 export const comments = pgTable(
   'comments',
   {
+    id: serial('id'),
+    postId: integer('post_id'),
+    visitorId: integer('visitor_id'),
     createdAt: timestamp('created_at', {
       withTimezone: true,
       precision: 0,
     }),
-    id: serial('id'),
-    postId: integer('post_id'),
-    visitorId: integer('visitor_id'),
   },
   table => ({
     pk: primaryKey({

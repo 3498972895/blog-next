@@ -15,6 +15,13 @@
       "when": 1719991507402,
       "tag": "0001_perpetual_salo",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1720431070837,
+      "tag": "0002_classy_harrier",
+      "breakpoints": true
     }
   ]
 }

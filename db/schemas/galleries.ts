@@ -6,5 +6,5 @@ export const galleries = pgTable('galleries', {
   title: text('title'),
   where: text('where'),
   when: date('when'),
-  photoId: integer('photo_id').references(() => photos.id),
+  photoId: integer('photo_id').references(() => photos.id).notNull(),
 })

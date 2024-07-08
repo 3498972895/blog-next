@@ -4,7 +4,7 @@ import { photos } from './photos'
 export const sharingBooks = pgTable('sharing_books', {
   id: serial('id').primaryKey(),
   createdAt: date('created_at'),
-  cover: integer('cover').references(() => photos.id),
+  cover: integer('cover').references(() => photos.id, { onDelete: 'cascade' }),
   info: jsonb('info').$type<{
     title: string
     authors: string[]

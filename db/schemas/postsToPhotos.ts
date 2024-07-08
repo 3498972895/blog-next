@@ -8,10 +8,12 @@ export const postsToPhotos = pgTable(
   {
     postId: integer('post_id')
       .notNull()
-      .references(() => posts.id),
+      .references(() => posts.id, { onDelete: 'cascade' }),
     photoId: integer('photo_id')
       .notNull()
-      .references(() => photos.id),
+      .references(() => photos.id, {
+        onDelete: 'cascade',
+      }),
   },
   table => ({
     pk_posts_photos: primaryKey({ columns: [table.postId, table.photoId] }),

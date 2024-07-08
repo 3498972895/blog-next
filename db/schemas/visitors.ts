@@ -5,7 +5,7 @@ import { comments } from './comments'
 export const visitors = pgTable('visitors', {
   id: integer('id').primaryKey(),
   name: text('name'),
-  avatar: text('avatar'),
+  avatarURL: text('avatar_url'),
 })
 
 export const visitorsRelations = relations(visitors, ({ many }) => ({

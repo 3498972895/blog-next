@@ -8,10 +8,10 @@ export const postsToTags = pgTable(
   {
     postId: integer('post_id')
       .notNull()
-      .references(() => posts.id),
+      .references(() => posts.id, { onDelete: 'cascade' }),
     tagId: integer('tag_id')
       .notNull()
-      .references(() => tags.id),
+      .references(() => tags.id, { onDelete: 'cascade' }),
   },
   table => ({
     pk: primaryKey({ columns: [table.postId, table.tagId] }),
