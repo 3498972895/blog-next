@@ -1,10 +1,10 @@
-import { date, integer, pgTable, serial, text } from 'drizzle-orm/pg-core'
-import { photos } from './photos'
+import { date,  pgTable, serial, text } from 'drizzle-orm/pg-core'
 
-export const galleries = pgTable('galleries', {
+export const galleries = pgTable('gallery', {
   id: serial('id').primaryKey(),
-  title: text('title'),
+  title: text('title').notNull(),
   where: text('where'),
   when: date('when'),
-  photoId: integer('photo_id').references(() => photos.id).notNull(),
+  photoUrl: text('photo_url').notNull(),
+  createdAt:date('created_at').defaultNow()
 })

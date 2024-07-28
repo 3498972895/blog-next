@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1717832503351,
-      "tag": "0000_nasty_legion",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1719991507402,
-      "tag": "0001_perpetual_salo",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1720431070837,
-      "tag": "0002_classy_harrier",
+      "when": 1722150857471,
+      "tag": "0000_mute_sunspot",
       "breakpoints": true
     }
   ]
