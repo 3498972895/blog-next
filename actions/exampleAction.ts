@@ -1,7 +1,9 @@
 'use server'
-import { uploadImage } from '@/lib/utils/fileIO'
 
-export async function exampleTest(formdata: FormData) {
-  const exampleFile = formdata.get('example') as File
-  uploadImage(exampleFile, process.env.SUPABASE_BUCKET_FOLDER_POST_PHOTOS!)
+import { transfromToMDFile, uploadMD } from "@/lib/utils"
+
+export async function exampleTest(mdString: string) {
+const mdFile  = transfromToMDFile(mdString)
+const url   = uploadMD(mdFile)
+console.log(url)
 }

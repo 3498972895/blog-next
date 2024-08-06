@@ -1,7 +1,6 @@
 import { NextFetchEvent, NextRequest, NextResponse } from 'next/server'
 import { CustomMiddleware, type MiddlewareFactory } from './chain'
-import createMiddleware from 'next-intl/middleware'
-import { locales } from '@/i18n'
+import { createI18nMiddleware } from 'next-international/middleware'
 
 export const withI18nMiddleware: MiddlewareFactory = (
   CustomMiddleware: CustomMiddleware,
@@ -11,12 +10,13 @@ export const withI18nMiddleware: MiddlewareFactory = (
     event: NextFetchEvent,
     response: NextResponse,
   ) => {
-    const handle18nRouting = createMiddleware({
-      locales,
+    const i18nMiddleware = createI18nMiddleware({
+      locales: ['en', 'cn'],
+      // when dismatch the user locale use en
       defaultLocale: 'en',
-      localeDetection: false,
     })
-    response = handle18nRouting(request)
+
+    response = i18nMiddleware(request)
     return CustomMiddleware(request, event, response)
   }
 }

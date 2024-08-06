@@ -8,17 +8,19 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "type": "module",
   "dependencies": {
     "@supabase/supabase-js": "^2.44.4",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.31.2",
-    "md-editor-rt": "^4.17.3",
-    "next": "14.2.3",
+    "next": "^14.2.5",
     "next-auth": "^4.24.7",
-    "next-intl": "^3.14.1",
+    "next-international": "^1.2.4",
+    "next-mdx-remote": "^5.0.0",
     "postgres": "^3.4.4",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1"
   },
   "devDependencies": {
     "@types/node": "^20.14.2",
