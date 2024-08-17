@@ -1,5 +1,4 @@
 import {
-    NextMiddleware,
     NextMiddlewareResult,
 } from 'next/dist/server/web/types'
 import { NextFetchEvent, NextRequest, NextResponse } from 'next/server'

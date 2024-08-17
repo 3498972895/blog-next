@@ -1,9 +1,8 @@
 'use client'
 
-import {  useState } from 'react'
+import { useState } from 'react'
 import Markdown from 'react-markdown'
 import { mdxComponents } from './mdxComponents'
-import { exampleTest } from '@/actions/exampleAction'
 const Editor = () => {
   const [sourceInput, setSourceInput] = useState('')
 
@@ -15,13 +14,10 @@ const Editor = () => {
         value={sourceInput}
         onChange={e => setSourceInput(e.target.value)}
       />
-      <Markdown className='w-72 h-36' components={mdxComponents}>{sourceInput}</Markdown>
-      <button
-        onClick={async () => {
-          exampleTest(sourceInput)
-        }}>
-        upload
-      </button>
+      <Markdown className='w-72 h-36' components={mdxComponents}>
+        {sourceInput}
+      </Markdown>
+      <button onClick={async () => {}}>upload</button>
     </div>
   )
 }

@@ -12,7 +12,7 @@ export const withI18nMiddleware: MiddlewareFactory = (
   ) => {
     const i18nMiddleware = createI18nMiddleware({
       locales: ['en', 'cn'],
-      // when dismatch the user locale use en
+      // using en when dismatch the user locale
       defaultLocale: 'en',
     })
 
