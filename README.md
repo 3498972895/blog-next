@@ -5,7 +5,7 @@ This is a project which builds an blog system in the future.
 Attention: this project will be refactored by deno & lume.
 
 blew is transfroming sass to css using deno api.
-
+```ts
 export async function sassCompile(sourcePath: string, targetPath: string) {
     try {
         const sass = await import("npm:sass");
@@ -22,5 +22,7 @@ export async function sassCompile(sourcePath: string, targetPath: string) {
         setTimeout(() => {}, 1000);
     }
 }
+```
+```bash
 Task sass:compile deno run --allow-read --allow-write --allow-env ./scripts/sass.js
-
+```
